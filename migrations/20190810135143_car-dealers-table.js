@@ -4,7 +4,6 @@ exports.up = function(knex) {
   return knex.schema.createTable('car-dealers', table => {
     table.increments()
     table.text('dealership', 128)
-      // .unique()
       .notNullable()
     table.text('location')
   })

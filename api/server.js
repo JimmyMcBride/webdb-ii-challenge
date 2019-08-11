@@ -11,6 +11,7 @@ server.use(express.json())
 
 // Endpoints go here 🛑
 
+// GET Post ✳️
 server.get('/', async (req, res) => {
   try {
     const dealers = await db.select('*').from('car-dealers')
@@ -22,6 +23,7 @@ server.get('/', async (req, res) => {
   }
 })
 
+// GET Post by ID 🆔
 server.get('/:id', async (req, res) => {
   const { id } = req.params
   try {
@@ -40,6 +42,7 @@ server.get('/:id', async (req, res) => {
   }
 })
 
+// ADD Post ➕
 server.post('/', async (req, res) => {
   const dealerData = req.body
   try {
@@ -55,6 +58,7 @@ server.post('/', async (req, res) => {
   }
 })
 
+// UPDATE Post 💻
 server.put('/:id', async (req, res) => {
   const { id } = req.params
   const changes = req.body
@@ -75,6 +79,7 @@ server.put('/:id', async (req, res) => {
   }
 })
 
+// DELETE Post ☠️
 server.delete('/:id', async (req, res) => {
   const { id } = req.params
   const dealer = req.body
